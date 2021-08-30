@@ -1,0 +1,2 @@
+# PetOwnershipChanger
+ペットのオーナーを別のプレイヤーに引き継ぎます
