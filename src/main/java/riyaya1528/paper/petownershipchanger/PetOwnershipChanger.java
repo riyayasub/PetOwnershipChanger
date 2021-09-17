@@ -7,16 +7,18 @@ public final class PetOwnershipChanger extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        
         instance = this;
-        getCommand("ownershipchange").setExecutor(new Commands());
-        getServer().getPluginManager().registerEvents(new Join(),this);
-        getServer().getPluginManager().registerEvents(new SelectPet(),this);
-        getLogger().info("プラグインが有効になりました");
-        saveDefaultConfig();
+        getLogger().info("loaded!");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("プラグインが無効になりました");
+        getLogger().info("Unloaded");
+        DeleteWorlds.DeleteWorld(Bukkit.getServer().getWorld("world").getWorldFolder());
+        Bukkit.getServer().unloadWorld(getServer.getWorld("world"), true);
+
+
+
     }
 }
